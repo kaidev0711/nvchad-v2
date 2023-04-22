@@ -15,7 +15,9 @@ local sources = {
   b.formatting.stylua,
 
   -- Go
-  b.formatting.goimports,
+  -- b.formatting.goimports,
+  b.formatting.gofmt,
+  b.diagnostics.revive,
 
   --python
   b.diagnostics.flake8,
