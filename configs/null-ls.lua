@@ -17,7 +17,7 @@ local sources = {
   -- Go
   -- b.formatting.goimports,
   b.formatting.gofmt,
-  b.diagnostics.revive,
+  -- b.diagnostics.revive,
 
   --python
   b.diagnostics.flake8,
