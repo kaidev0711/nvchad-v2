@@ -1,8 +1,11 @@
 # NvChad-v2-config
+
 ## Dashboard
 
-![home!](img/home.png)
+![home!](img/home.jpg)
+
 ## Install Semua Kebutuhan Dasar
+
 1. Install Neovim 8.0+ https://github.com/neovim/neovim/releases/tag/v0.8.1
 2. C++ (windows) Compiler https://www.msys2.org/
 3. GIT https://git-scm.com/download/win
@@ -76,21 +79,29 @@ lazygit --version
 ```
 
 ## Config Linux / MAC
+
 - Rename Config Original
+
 ```
 mv ~/.config/nvim/lua/custom/ ~/.config/nvim/lua/custom_backup
 ```
+
 - Clone Config Baru
+
 ```
 git clone https://github.com/pojokcodeid/NvChad-v2-config ~/.config/nvim/lua/custom
 ```
+
 ## Config Windows
+
 - Rename Config Original
+
 ```
 Rename-Item "$env:LOCALAPPDATA\nvim\lua\custom" "$env:LOCALAPPDATA\nvim\lua\custom_backup"
 ```
+
 - Clone Config Baru
+
 ```
 git clone https://github.com/pojokcodeid/NvChad-v2-config "$env:LOCALAPPDATA\nvim\lua\custom"
 ```
-
