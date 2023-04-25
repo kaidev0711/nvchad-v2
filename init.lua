@@ -14,6 +14,7 @@ autocmd("VimEnter", {
 })
 
 local opt = vim.opt
+-- lualine
 opt.cmdheight = 0
 -- opt.guicursor = a
 -- opt.cursorline = true

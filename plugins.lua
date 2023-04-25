@@ -332,12 +332,13 @@ local plugins = {
   -- custom by pojok code
   {
     "goolord/alpha-nvim",
-    -- enabled = false,
+    enabled = false,
     event = "BufWinEnter",
     config = function()
       require "custom.configs.alpha"
     end,
   },
+  -- lualine
   {
     "nvim-lualine/lualine.nvim",
     event = "BufRead",
