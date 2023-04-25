@@ -5,7 +5,7 @@ autocmd("VimResized", {
   pattern = "*",
   command = "tabdo wincmd =",
 })
-
+-- lualine
 autocmd("VimEnter", {
   pattern = "*",
   callback = function()
