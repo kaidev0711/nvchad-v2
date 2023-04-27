@@ -5,7 +5,6 @@ local servers = {
   "dockerls",
   "pyright",
 }
-
 local function idxOf(array, value)
   for i, v in ipairs(array) do
     if v == value then
@@ -86,21 +85,6 @@ require("mason-lspconfig").setup_handlers {
     end
   end,
   -- Next, you can provide targeted overrides for specific servers.
-  -- ["gopls"] = function()
-  --   lspconfig.gopls.setup {
-  --     cmd = { "gopls", "serve" },
-  --     filetypes = { "go", "gomod" },
-  --     root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-  --     settings = {
-  --       gopls = {
-  --         analyses = {
-  --           unusedparams = true,
-  --         },
-  --         staticcheck = true,
-  --       },
-  --     },
-  --   }
-  -- end,
   -- ["rust_analyzer"] = function()
   -- 	require("rust-tools").setup({})
   -- end,

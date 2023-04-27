@@ -173,7 +173,8 @@ local lsp_info = {
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "auto",
+    theme = "onedark",
+    --theme = "auto",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     --component_separators = { left = "", right = "" },
