@@ -6,13 +6,13 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 -- lualine
-autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-    vim.opt.statusline = "%#normal# "
-  end,
-})
-
+-- autocmd("VimEnter", {
+--   pattern = "*",
+--   callback = function()
+--     vim.opt.statusline = "%#normal# "
+--   end,
+-- })
+--
 local opt = vim.opt
 -- lualine
 opt.cmdheight = 0

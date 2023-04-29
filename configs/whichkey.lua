@@ -4,36 +4,36 @@ if not status_ok then
 end
 
 -- config for toggleterm
-
-function _LAZYGIT_TOGGLE()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
-  lazygit:toggle()
-end
-
-function _NODE_TOGGLE()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local node = Terminal:new { cmd = "node", hidden = true }
-  node:toggle()
-end
-
-function _NCDU_TOGGLE()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local ncdu = Terminal:new { cmd = "ncdu", hidden = true }
-  ncdu:toggle()
-end
-
-function _HTOP_TOGGLE()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local htop = Terminal:new { cmd = "htop", hidden = true }
-  htop:toggle()
-end
-
-function _PYTHON_TOGGLE()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local python = Terminal:new { cmd = "python", hidden = true }
-  python:toggle()
-end
+--
+-- function _LAZYGIT_TOGGLE()
+--   local Terminal = require("toggleterm.terminal").Terminal
+--   local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
+--   lazygit:toggle()
+-- end
+--
+-- function _NODE_TOGGLE()
+--   local Terminal = require("toggleterm.terminal").Terminal
+--   local node = Terminal:new { cmd = "node", hidden = true }
+--   node:toggle()
+-- end
+--
+-- function _NCDU_TOGGLE()
+--   local Terminal = require("toggleterm.terminal").Terminal
+--   local ncdu = Terminal:new { cmd = "ncdu", hidden = true }
+--   ncdu:toggle()
+-- end
+--
+-- function _BTOP_TOGGLE()
+--   local Terminal = require("toggleterm.terminal").Terminal
+--   local btop = Terminal:new { cmd = "btop", hidden = true }
+--   btop:toggle()
+-- end
+--
+-- function _PYTHON_TOGGLE()
+--   local Terminal = require("toggleterm.terminal").Terminal
+--   local python = Terminal:new { cmd = "python", hidden = true }
+--   python:toggle()
+-- end
 
 local setup = {
   icons = {
@@ -223,10 +223,10 @@ local mappings = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+    H = { "<cmd>lua _BTOP_TOGGLE()<cr>", "btop" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>" .. trn, "Float" },
-    H = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+    t = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>" .. trn, "Vertical" },
   },
   r = {
