@@ -16,7 +16,9 @@ local sources = {
 
   -- Go
   -- b.formatting.goimports,
-  b.formatting.gofmt,
+  -- b.formatting.gofmt,
+  b.formatting.gofumpt,
+  b.formatting.golines,
   -- b.diagnostics.revive,
 
   --python
