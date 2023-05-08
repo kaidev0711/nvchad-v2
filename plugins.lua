@@ -346,11 +346,11 @@ local plugins = {
   --     require "custom.configs.lualine"
   --   end,
   -- },
-  { "hrsh7th/cmp-nvim-lsp",     event = "BufRead" },
-  { "hrsh7th/cmp-buffer",       event = "BufRead" },
-  { "hrsh7th/cmp-path",         event = "BufRead" },
+  { "hrsh7th/cmp-nvim-lsp", event = "BufRead" },
+  { "hrsh7th/cmp-buffer", event = "BufRead" },
+  { "hrsh7th/cmp-path", event = "BufRead" },
   { "saadparwaiz1/cmp_luasnip", event = "BufRead" },
-  { "hrsh7th/cmp-nvim-lua",     event = "BufRead" },
+  { "hrsh7th/cmp-nvim-lua", event = "BufRead" },
   {
     "tzachar/cmp-tabnine",
     build = "./install.sh",
@@ -420,11 +420,11 @@ local plugins = {
         },
         sources = cmp.config.sources {
           { name = "nvim_lsp" },
+          { name = "cmp_tabnine" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
-          { name = "cmp_tabnine" },
         },
         formatting = {
           fields = { "kind", "abbr", "menu" },
