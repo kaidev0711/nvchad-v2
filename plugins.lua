@@ -524,15 +524,7 @@ local plugins = {
       require("project_nvim").setup {}
     end,
   },
-  {
-    'leoluz/nvim-dap-go',
-    ft = "go",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function()
-      require("dap-go").setup()
-    end
-  },
-
+  
   -- for live server html,css,js
   liveserver,
   -- for multi cursor select
