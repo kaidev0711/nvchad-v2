@@ -346,11 +346,19 @@ local plugins = {
   --     require "custom.configs.lualine"
   --   end,
   -- },
-  { "hrsh7th/cmp-nvim-lsp", event = "BufRead" },
-  { "hrsh7th/cmp-buffer", event = "BufRead" },
-  { "hrsh7th/cmp-path", event = "BufRead" },
+  { "hrsh7th/cmp-nvim-lsp",     event = "BufRead" },
+  { "hrsh7th/cmp-buffer",       event = "BufRead" },
+  { "hrsh7th/cmp-path",         event = "BufRead" },
   { "saadparwaiz1/cmp_luasnip", event = "BufRead" },
-  { "hrsh7th/cmp-nvim-lua", event = "BufRead" },
+  { "hrsh7th/cmp-nvim-lua",     event = "BufRead" },
+  {
+    "tzachar/cmp-tabnine",
+    build = "./install.sh",
+    dependencies = "hrsh7th/nvim-cmp",
+    config = function()
+      require "custom.configs.nv-tabnine"
+    end,
+  },
   {
     "hrsh7th/nvim-cmp",
     version = false, -- last release is way too old
@@ -358,6 +366,8 @@ local plugins = {
     opts = function()
       local cmp = require "cmp"
       local luasnip = require "luasnip"
+      local compare = require "cmp.config.compare"
+      require("luasnip/loaders/from_vscode").lazy_load()
 
       local check_backspace = function()
         local col = vim.fn.col "." - 1
@@ -414,6 +424,7 @@ local plugins = {
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
+          { name = "cmp_tabnine" },
         },
         formatting = {
           fields = { "kind", "abbr", "menu" },
@@ -423,6 +434,7 @@ local plugins = {
               nvim_lsp = "(LSP)",
               luasnip = "(Snippet)",
               buffer = "(Buffer)",
+              cmp_tabnine = "[TN]",
               path = "(Path)",
             })[entry.source.name]
             return vim_item
@@ -433,8 +445,22 @@ local plugins = {
           documentation = cmp.config.window.bordered(),
         },
         experimental = {
-          ghost_text = true,
+          ghost_text = false,
           native_menu = false,
+        },
+        sorting = {
+          priority_weight = 2,
+          comparators = {
+            require "cmp_tabnine.compare",
+            compare.offset,
+            compare.exact,
+            compare.score,
+            compare.recently_used,
+            compare.kind,
+            compare.sort_text,
+            compare.length,
+            compare.order,
+          },
         },
       }
     end,
