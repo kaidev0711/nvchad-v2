@@ -16,6 +16,7 @@ M.treesitter = {
     "yaml",
     "go",
     "json",
+    "proto"
   },
   indent = {
     enable = true,
