@@ -228,6 +228,7 @@ local mappings = {
     k = { "<cmd>lua _LAZYDOCKER_TOGGLE()<cr>", "Lazy Docker" },
     p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     i = { "<cmd>lua _PROJECT_INFO_TOGGLE()<CR>", "Project Info" },
+    r = { "<cmd>lua _RANGER_TOGGLE()<CR>", "ranger" },
     f = { "<cmd>ToggleTerm direction=float<cr>" .. trn, "Float" },
     t = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>" .. trn, "Vertical" },
