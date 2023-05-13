@@ -425,6 +425,7 @@ local plugins = {
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
+          { name = "orgmode" },
         },
         formatting = {
           fields = { "kind", "abbr", "menu" },
@@ -524,7 +525,18 @@ local plugins = {
       require("project_nvim").setup {}
     end,
   },
-  
+  {
+    "nvim-orgmode/orgmode",
+    ft = { "org" },
+    config = function()
+      require("orgmode").setup {
+        org_agenda_files = { "~/Documents/org/*" },
+        org_default_notes_file = "~/Documents/org/notes.org",
+      }
+      require("orgmode").setup_ts_grammar()
+    end,
+  },
+
   -- for live server html,css,js
   liveserver,
   -- for multi cursor select

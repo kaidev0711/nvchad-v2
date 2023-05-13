@@ -17,12 +17,17 @@ M.treesitter = {
     "go",
     "json",
     "proto",
+    "org",
   },
   indent = {
     enable = true,
     -- disable = {
     --   "python"
     -- },
+  },
+  highlight = {
+    -- enable = true,
+    additional_vim_regex_highlighting = { "org" },
   },
 }
 
