@@ -17,9 +17,9 @@ local opt = vim.opt
 -- lualine
 opt.cmdheight = 1
 -- fold treesitter
--- opt.foldlevel = 20
--- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 20
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- opt.guicursor = a
 -- opt.cursorline = true
 

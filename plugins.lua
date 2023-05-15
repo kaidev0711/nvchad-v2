@@ -425,6 +425,7 @@ local plugins = {
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
+
         },
         formatting = {
           fields = { "kind", "abbr", "menu" },
@@ -526,23 +527,21 @@ local plugins = {
   },
   {
     "nvim-neorg/neorg",
-    ft = "norg",
+    ft = {"norg"},
     build = ":Neorg sync-parsers",
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {},  -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.dirman"] = {      -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/notes",
-              },
+    opts = {
+      load = {
+        ["core.defaults"] = {},  -- Loads default behaviour
+        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.dirman"] = {      -- Manages Neorg workspaces
+          config = {
+            workspaces = {
+              notes = "~/notes",
             },
           },
         },
-      }
-    end,
+      },
+    },
     dependencies = { { "nvim-lua/plenary.nvim" } },
   },
   -- for live server html,css,js
