@@ -425,7 +425,6 @@ local plugins = {
           { name = "buffer" },
           { name = "path" },
           { name = "nvim_lua" },
-          { name = "orgmode" },
         },
         formatting = {
           fields = { "kind", "abbr", "menu" },
@@ -526,17 +525,26 @@ local plugins = {
     end,
   },
   {
-    "nvim-orgmode/orgmode",
-    ft = { "org" },
+    "nvim-neorg/neorg",
+    ft = "norg",
+    build = ":Neorg sync-parsers",
     config = function()
-      require("orgmode").setup {
-        org_agenda_files = { "~/Documents/org/*" },
-        org_default_notes_file = "~/Documents/org/notes.org",
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},  -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = {      -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/notes",
+              },
+            },
+          },
+        },
       }
-      require("orgmode").setup_ts_grammar()
     end,
+    dependencies = { { "nvim-lua/plenary.nvim" } },
   },
-
   -- for live server html,css,js
   liveserver,
   -- for multi cursor select
